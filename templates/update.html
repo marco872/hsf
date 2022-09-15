@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+
+		  {{ message }}
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+
+{% endfor %}
+
+{% if id == current_user.id %}
+
+	{% if name  %}
+		<table class="table table-hover table-bordered table-striped">
+		{% for our_viewer in our_viewers %}
+			<tr>
+			<td>{{ our_viewer.id }}. 
+			{{ our_viewer.name }}-{{ our_viewer.email }}-{{ our_viewer.profession }}</td>
+			</tr>	
+		{% endfor %}
+	</table>
+	{% else %}
+		<h1>Update Viewer...</h1>
+		<br/>
+	<div class="shadow p-3 mb-5 bg-light rounded ">
+		<form action="/update/{{ name_to_update.id }}" method="POST">
+			{{ form.hidden_tag() }}
+
+			{{ form.name.label(
+			class="form-label") }}
+			{{ form.name(
+			class="form-control", value=name_to_update.name ) }}
+			<br/>
+			{{ form.username.label(
+			class="form-label") }}
+			{{ form.username(
+			class="form-control", value=name_to_update.username ) }}
+			<br/>
+			{{ form.email.label(
+			class="form-label") }}
+			{{ form.email(
+			class="form-control", value=name_to_update.email) }}
+			<br/>
+			{{ form.profession.label(
+			class="form-label") }}
+			{{ form.profession(
+			class="form-control", value=name_to_update.profession) }}
+			<br/>
+			
+			{{ form.submit(
+			class="btn btn-secondary") }}
+			
+			<a href="{{ url_for('delete', id=id)}}" class="btn btn-danger">Delete</a>
+		</form>
+	</div>
+	<br/><br/>
+
+	{% endif %}
+{% else %}
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+			Access Denied! You Can't Edit This Page
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+{% endif %}
+
+	
+
+{% endblock %}
+
+
+
+	
+
+
+
+	
+

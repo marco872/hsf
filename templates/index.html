@@ -1,1 +1,65 @@
-<h3>Holistic Sustainable Future</h3>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-xl"></div>
+
+	<h4 style="color: darkgrey"> Welcome to :</h4>
+			<img src="{{ url_for('static', filename='images/marco.jpg') }}" width="150" align="center">
+			<h1>Holistic Sustainable Future</h1>
+	<h4 style="color: darkgrey"> Open Source Blog to discuss the future of our cities.</h4>
+	<br/>
+	
+	<a href="{{ url_for('add_viewer', id=current_user.id)}}">Register To Join our TOPICS</a>
+	<br/><br/>
+	<hr/><br/>
+	
+
+
+<div class="shadow p-3 mb-5 bg-light rounded ">
+<div class="card mb-3" style="margin-top:10px">
+	<div class="row no-gutters">
+		<div class="col-md-2">
+			<img src="{{ url_for('static', filename='images/cedric.jpg') }}" width="120" align="left">
+		</div>
+		<div class="col-md-10">
+			<div class="card-body" >
+				<h3 class="card-title" style="margin-top:50px" >
+					Cedric Price : 
+				</h3>
+				<p class="card-text" >
+					 <strong>"The wise game of Architecture"</strong>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>	
+
+<br/><br/>
+
+<div class="shadow p-3 mb-5 bg-light rounded ">
+<div class="card mb-3" style="margin-top:10px">
+	<div class="row no-gutters">
+		<div class="col-md-2">
+			<img src="{{ url_for('static', filename='images/gentry.png') }}" width="120" height="170" align="left">
+		</div>
+		<div class="col-md-10" >
+			<div class="card-body"  >
+				<h3 class="card-title" style="margin-top:50px" >
+					Gentrification : 
+				</h3>
+				<p class="card-text" >
+					 <strong>"Tools and Strategies to eradicate it"</strong>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>	
+
+	
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+		<h1>Submitted Topics</h1>
+		<br/>
+		<ul>
+		{% for topic in topics %}
+			<li>{{ topic}}</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+{% endblock %}

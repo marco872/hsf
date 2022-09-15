@@ -1,1 +1,39 @@
-<h1>Gentrification Topic</h1>
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<br/><br/>
+{% for message in get_flashed_messages() %}
+
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+  		{{ message }}
+  	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+
+	
+{% endfor %}
+	
+	<br/>
+
+<form action="/admin" method="POST" >
+<div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" name='name'>
+</div>
+	
+	<br/>
+<div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Topic" name='topic' >
+</div>
+	
+	<br/>
+<div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name='email'>
+</div>
+	
+	<br/>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+
+{% endblock %}
