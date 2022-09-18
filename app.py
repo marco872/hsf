@@ -10,6 +10,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms.widgets import TextArea
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_ckeditor import CKEditor
+
 from flask_ckeditor import CKEditorField
 from flask_wtf.file import FileField
 from werkzeug.utils import secure_filename
@@ -58,6 +59,8 @@ app.config['SECRET_KEY'] = "hard to guess"
 #Initialize DataBase
 UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -65,6 +68,9 @@ migrate = Migrate(app, db)
 
 #@app.route('/') SECTION Starts________________________________________________
 
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	form = LoginForm()

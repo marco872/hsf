@@ -9,11 +9,11 @@
 	{% if posts %}
 	{% for post in posts %}
 		<div class="shadow p-3 mb-5 bg-light rounded ">
-		<h2><a href="{{ url_for('post', id=post.id )}}">{{ post.title }}</a></h2>
+		<h3><a href="{{ url_for('post', id=post.id )}}">{{ post.title }}</a></h3>
 		<small>By:  {{ post.poster.name }}<br>
 		{{ post.date_posted}}</small> 
 		<br><br>
-		{{ post.content|safe }}
+		
 		<br/><br/>
 		<a href="{{ url_for('post', id=post.id) }}" class="btn btn-outline-secondary btn-sm" >View Post</a>
 
