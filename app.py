@@ -16,10 +16,20 @@ from flask_wtf.file import FileField
 from werkzeug.utils import secure_filename
 import uuid as uuid
 import os
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#from flaskext.mysql import MySQL
 
-
-#Create a Flask Instance
 app = Flask(__name__)
+#app.config["DEBUG"] = True
+#mysql = MySQL()
+#app.config['MYSQL_DATABASE_USER'] = 'marco873'
+#app.config['MYSQL_DATABASE_PASSWORD'] = 'Mandorladespina1'
+#app.config['MYSQL_DATABASE_DB'] = 'marco873$viewers'
+#app.config['MYSQL_DATABASE_HOST'] = 'marco873.mysql.pythonanywhere-services.com'
+#mysql.init_app(app)
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ckeditor = CKEditor(app)
 
 # Flask login stuffflask
@@ -53,7 +63,8 @@ def load_viewr(viewr_id):
 #  SQL Database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///viewer.db'
 #  MYSQL Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Mandorladespina1@localhost/viewers'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Mandorladespina1@localhost/viewers'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://marco873:Mandorladespina1@marco873.mysql.pythonanywhere-services.com/marco873$viewers'
 # Secret Key
 app.config['SECRET_KEY'] = "hard to guess"
 #Initialize DataBase
@@ -187,10 +198,12 @@ def delete(id):
 @app.route('/')
 def index():
 	return render_template("index.html")
+
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.route('/about')
 def about():
 	return render_template("about.html")
+
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #STEP-3:
 @app.route('/viewer/add', methods=['GET','POST'])
@@ -296,7 +309,7 @@ def edit_post(id):
 		flash("Post Has Been updated!")
 		return redirect(url_for("post", id=post.id))
 
-	if current_user.id == post.poster_id or current_user.id == 31:
+	if current_user.id == post.poster_id or current_user.id == 33:
 
 		form.title.data = post.title
 		#form.author.data = post.author
@@ -313,7 +326,7 @@ def edit_post(id):
 def delete_post(id):
 	post_to_delete = Posts.query.get_or_404(id)
 	id = current_user.id
-	if id == post_to_delete.poster.id or current_user.id == 31:
+	if id == post_to_delete.poster.id or current_user.id == 33:
 
 		try:
 			db.session.delete(post_to_delete)
