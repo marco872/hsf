@@ -20,6 +20,7 @@ import os
 #from flaskext.mysql import MySQL
 
 app = Flask(__name__)
+#app.run(use_reloader=True)
 #app.config["DEBUG"] = True
 #mysql = MySQL()
 #app.config['MYSQL_DATABASE_USER'] = 'marco873'
@@ -205,6 +206,16 @@ def about():
 	return render_template("about.html")
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/impressum')
+def impressum():
+	return render_template("impressum.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/products')
+def products():
+	return render_template("products.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #STEP-3:
 @app.route('/viewer/add', methods=['GET','POST'])
 def add_viewer():
@@ -282,13 +293,14 @@ def add_post():
 	return render_template("add_post.html", form=form)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.route('/posts')
-@ login_required
+#@ login_required
 def posts():
 	posts = Posts.query.order_by(Posts.date_posted)
 	return render_template("posts.html", posts=posts)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 @app.route('/posts/<int:id>')
-@ login_required
+#@ login_required
 def post(id):
 	post = Posts.query.get_or_404(id)
 	return render_template('post.html', post=post)

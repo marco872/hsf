@@ -18,16 +18,17 @@
 {% if name  %}
 	<h1>Viewer Added!</h1>
 	<br/><br/><br/>
+	
 	<table class="table table-hover table-bordered table-striped">
 	{% for our_viewer in our_viewers %}
 		<tr>
 		<td>{{ our_viewer.id }}.<a href="{{ url_for('update', id=our_viewer.id)}}">
 		{{ our_viewer.name }}</a>-{{ our_viewer.profession }}-{{ our_viewer.email }}-
-		<a href="{{ url_for('delete', id=our_viewer.id)}}">Delete</a>
 		</tr>	
 	{% endfor %}
 </table>
 {% else %}
+
 	<h1>Viewer List:</h1>
 	<br/>
 <div class="shadow p-3 mb-5 bg-light rounded ">
@@ -68,6 +69,7 @@
 		{{ form.submit(
 		class="btn btn-secondary") }}
 	</form>
+
 </div>
 <br/><br/>
 

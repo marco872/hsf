@@ -20,12 +20,15 @@
 {{ post.date_posted}}</small> 
 <br><br>
 {{ post.content|safe }}<br>
-{{ post.poster.about_author }}
+<a href="{{ url_for('products')}}" class="btn btn-outline-success btn "><strong>Innovations</strong></a>
+<br/>
+
 </div>
+
+<em>{{ post.poster.about_author }}</em>
+<br><br> 
 <a href="{{ url_for('posts')}}" class="btn btn-outline-secondary btn-sm ">Back to Blog</a>
-	
-
-
+<br><br> 	
 {% endblock %}
 
 
