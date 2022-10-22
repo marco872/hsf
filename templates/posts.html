@@ -11,27 +11,27 @@
 		</div>
 {% endfor %}
 
-<h3>Holistic Sustainable Future</h3>
+<h3>HSF Topics</h3>
 <br/>
 {% for post in posts %}
 <div class="shadow p-3 mb-5 bg-light rounded ">
-<h3><a href="{{ url_for('post', id=post.id )}}">{{ post.title }}</a></h3>
-<small>By:  {{ post.poster.name }}<br>
-{{ post.date_posted}}</small> 
+	<div class="card">
+		<h5><a href="{{ url_for('post', id=post.id )}}"><small><em>{{ post.title }}</em></small></a></h5>
+		<small style="color: darkred">By:  {{ post.poster.name }}</small>
+		<small>{{ post.date_posted}}</small> 
 
-<br/><br/>
-<a href="{{ url_for('post', id=post.id) }}" class="btn btn-outline-secondary btn-sm" >View Post</a>
+		<a href="{{ url_for('post', id=post.id) }}" class="btn btn-primary btn-sm" >View Posts</a>
 
-{% if post.poster_id == current_user.id or current_user.id == 33 %}	
-<a href="{{ url_for('edit_post', id=post.id)}}" class="btn btn-outline-secondary btn-sm ">Edit Post</a>
-<a href="{{ url_for('delete_post', id=post.id)}}" class="btn btn-outline-danger btn-sm ">Delete Post</a>
-{% endif %}
-
+		{% if post.poster_id == current_user.id or current_user.id == 33 %}	
+		<a href="{{ url_for('edit_post', id=post.id)}}" class="btn btn-outline-secondary btn-sm ">Edit Posts</a>
+		<a href="{{ url_for('delete_post', id=post.id)}}" class="btn btn-outline-danger btn-sm ">Delete Posts</a>
+		{% endif %}
+	</div>
 
 	
-<br/><br/>
+
 </div>
-<br/>
+
 {% endfor %}
 
 

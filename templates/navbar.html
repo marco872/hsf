@@ -11,14 +11,14 @@
               <a class="nav-link" href="{{ url_for('about')}}">About</a>
           </li>
         <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('topic')}}"style="color:lightgreen">Submit Topics</a>
+              <a class="nav-link" href="{{ url_for('topic')}}">Topics</a>
           </li>
 
         
 
         {% if current_user.is_authenticated %}
           <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('dashboard')}}">Dashboard</a>
+              <a class="nav-link" href="{{ url_for('dashboard')}}" style="color:lightgreen">Dashboard</a>
             </li>
           <li class="nav-item">
               <a class="nav-link" href="{{ url_for('logout')}}">Logout</a>
@@ -26,7 +26,7 @@
 
         {% else %}
         <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('add_viewer')}}">Register</a>
+              <a class="nav-link" href="{{ url_for('add_viewer')}}" style="color:lightblue">Register</a>
           </li>
         <li class="nav-item">
               <a class="nav-link" href="{{ url_for('login')}}">Login</a>
@@ -45,20 +45,26 @@
        
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('posts')}}">Posts</a>
-          </li> 
+          </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('products')}}" style="color:lightblue">Innovations</a>
+          </li>  
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('nfts')}}" style="color:lightblue">NFTs</a>
+          </li>  
 
       </ul>
       <form method="POST" action="{{ url_for('search')}}" class="d-flex">
         {{ form.hidden_tag() }}
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search", name="searched">
+        <input class="form-control me-2" type="search" placeholder="Search by Topics" aria-label="Search", name="searched">
         <button class="btn btn-outline-secondary" type="submit">Search</button>
       </form>
 
       
 
-      <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('products')}}" style="color:lightgreen">Innovations</a>
-          </li>  
+        
     </div>
   </div>
 </nav>

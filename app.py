@@ -20,13 +20,17 @@ import os
 #from flaskext.mysql import MySQL
 
 app = Flask(__name__)
-#app.run(use_reloader=True)
+#use_debugger=True
+
+#app.run(debug=True)
 app.config["DEBUG"] = True
+app.config['SQLALCHEMY_POOL_RECYCLE'] = 299
+app.config['SQLALCHEMY_POOL_TIMEOUT'] = 20
 #mysql = MySQL()
 #app.config['MYSQL_DATABASE_USER'] = 'marco873'
 #app.config['MYSQL_DATABASE_PASSWORD'] = 'Mandorladespina1'
 #app.config['MYSQL_DATABASE_DB'] = 'marco873$viewers'
-app.config['MYSQL_DATABASE_HOST'] = 'marco873.mysql.pythonanywhere-services.com'
+#app.config['MYSQL_DATABASE_HOST'] = 'marco873.mysql.pythonanywhere-services.com'
 #mysql.init_app(app)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -64,8 +68,8 @@ def load_viewr(viewr_id):
 #  SQL Database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///viewer.db'
 #  MYSQL Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Mandorladespina1@localhost/viewers'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://marco873:Mandorladespina1@marco873.mysql.pythonanywhere-services.com/marco873$viewers'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Mandorladespina1@localhost/viewers'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://marco873:Mandorladespina1@marco873.mysql.pythonanywhere-services.com/marco873$viewers'
 # Secret Key
 app.config['SECRET_KEY'] = "hard to guess"
 #Initialize DataBase
@@ -118,7 +122,7 @@ def search():
 
 	if form.validate_on_submit():
 		post.searched = form.searched.data
-		posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
+		posts = posts.filter(Posts.title.like('%' + post.searched + '%'))
 		posts = posts.order_by(Posts.title).all()
 		return render_template("search.html", form=form, searched = post.searched, posts=posts)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -216,6 +220,120 @@ def products():
 	return render_template("products.html")
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/nfts')
+def nfts():
+	return render_template("nfts.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/a')
+def a():
+	return render_template("a.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/b')
+def b():
+	return render_template("b.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++	
+@app.route('/c')
+def c():
+	return render_template("c.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/d')
+def d():
+	return render_template("d.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/e')
+def e():
+	return render_template("e.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/f')
+def f():
+	return render_template("f.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/g')
+def g():
+	return render_template("g.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/g1')
+def g1():
+	return render_template("g1.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/h')
+def h():
+	return render_template("h.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/i')
+def i():
+	return render_template("i.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/j')
+def j():
+	return render_template("j.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/k')
+def k():
+	return render_template("k.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/l')
+def l():
+	return render_template("l.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/')
+def m():
+	return render_template("m.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/n')
+def n():
+	return render_template("n.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/o')
+def o():
+	return render_template("o.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/p')
+def p():
+	return render_template("p.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/q')
+def q():
+	return render_template("q.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/r')
+def r():
+	return render_template("r.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/s')
+def s():
+	return render_template("s.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/t')
+def t():
+	return render_template("t.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/u')
+def u():
+	return render_template("u.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/v')
+def v():
+	return render_template("v.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/w')
+def w():
+	return render_template("w.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/x')
+def x():
+	return render_template("x.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/y')
+def y():
+	return render_template("y.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/z')
+def z():
+	return render_template("z.html")
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #STEP-3:
 @app.route('/viewer/add', methods=['GET','POST'])
 def add_viewer():
@@ -293,9 +411,9 @@ def add_post():
 	return render_template("add_post.html", form=form)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.route('/posts')
-#@ login_required
+@ login_required
 def posts():
-	posts = Posts.query.order_by(Posts.date_posted)
+	posts = Posts.query.order_by(Posts.title)
 	return render_template("posts.html", posts=posts)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -414,7 +532,7 @@ class VieweForm(FlaskForm):
 	submit = SubmitField("Submit")
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class PostForm(FlaskForm):
-	title = StringField("Selected-Topic", validators=[DataRequired()])
+	title = StringField("Select-Topic: Bartering / Cedric Price / Fifteen-minute city / Gentrification  /  Guerrilla Gardening / Recycled People", validators=[DataRequired()])
 	#content = StringField("Content", validators=[DataRequired()], widget=TextArea())
 	content = CKEditorField('Content', validators=[DataRequired()])
 	#author = StringField("Author")

@@ -26,7 +26,7 @@
 		<strong>User Id:</strong> {{ current_user.id }}<br/>
 		<strong>Email:</strong> {{ current_user.email }}<br/>
 		<strong>Profession:</strong> {{ current_user.profession }}<br/>
-		<strong>About Author:</strong> {{ current_user.about_author }}<br/>
+		<!--<strong>About Author:</strong> {{ current_user.about_author }}<br/>-->
 		
 		<strong>Date Joined:</strong> {{ current_user.date_added }}<br/>
 	</p>
@@ -36,7 +36,7 @@
 
 	
 	</div>
-	<div class="col-4">
+	<!--<div class="col-4">
 		{% if current_user.profile_pic %}
 			<img src="{{ url_for('static', filename='images/' + current_user.profile_pic) }}" width="70" height="90" align="right">
 
@@ -50,8 +50,8 @@
      <br/>
 </div>
 
-<br/>
-<div class="card">
+<br/>-->
+<!--<div class="card">
   <div class="card-header">
    <u>Update Profile</u>
   </div>
@@ -78,8 +78,8 @@
 		class="form-label") }}
 		{{ form.profession(
 		class="form-control", value=name_to_update.profession) }}
-		<br/>
-		{{ form.about_author.label(
+		<br/>-->
+		<!--{{ form.about_author.label(
 		class="form-label") }}
 		<textarea name="about_author" class="form-control">
 		{{ name_to_update.about_author }}</textarea>
@@ -88,18 +88,19 @@
 		class="form-label") }}
 		{{ form.profile_pic(
 		class="form-control", value=name_to_update.profile_pic) }}
-		<br/>
+		<br/> 
 		
 		{{ form.submit(
 		class="btn btn-secondary btn-sm") }}
 		
 		
-	</form>
+	</form>-->
 	
 	
 
 
 
-</div>	
+</div>
+<br/><br/>	
 
 {% endblock %}
