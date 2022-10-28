@@ -5,21 +5,47 @@
 {% block content %}
 
 	<br/>
-	<center>
+	
 	<h1>F</h1>
 	<br/><hr/>
+<h3> Inspirations: </h3>
+<hr/>
+<div class="container">
+	<div class="row" style="margin-left: 20px">
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/help.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Peer-to-Peer Services</p>
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/env.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Environment Protection</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/wood.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Eco-Friendly Construction</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/opp.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Business Opportunities</p>
+			
+		</div>
+	</div>
+</div>
+
+	<br/><hr/>
+
 <div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
+
 	<h3>1-Fifteen-minute city</h3>
 	<h2>Flex Building Model</h2>
 	<p>Hybrid building which combines short-term and long-term rental spaces...</p>
-	<p><em><small>full article under the heading posts</small></em>
+	<p><em><small>full article under  posts</small></em>
 	<a href="http://marco873.pythonanywhere.com/posts/19"
-              					>click here to <strong>"Flex Building Model Concept":</strong></a></p>
+              					>click here to <strong>Flex Building Model Concept</strong></a></p>
 </div>
-</div>
-</div>
-	</center>
+
+
 
 {% endblock %}

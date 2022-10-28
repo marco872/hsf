@@ -5,23 +5,50 @@
 {% block content %}
 
 	<br/>
-	<center>
+
 	<h1>G</h1>
 	<br/><hr/>
+<h3> Inspirations: </h3>
+<hr/>
+<div class="container">
+	<div class="row" style="margin-left: 20px">
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/block.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Blockchain System</p>
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/spec.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Real Estate Speculation</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/gen.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Gentrified Cities</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/push.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Cultural Identity Loss</p>
+			
+		</div>
+	</div>
+</div>
+
+	<br/><hr/>
+
+
 <div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
+
 	<h3>1-Gentrification</h3>
 	<h2>DLT for Sustainable Real Estate Developments</h2>
 	<p>Distributed Ledger Technologies automate real estate development...</p>
-	<p><em><small>full article under the heading posts</small></em>
+	<p><em><small>full article under posts</small></em>
 	<a href="http://marco873.pythonanywhere.com/posts/16"
-              					>click here to <strong>"About Distributed Ledger Technologies":</strong></a></p>
+              					>click here to <strong>About Distributed Ledger Technologies:</strong></a></p>
 </div>
-</div>
-</div>
+
 	
 	
-	</center>
+
 
 {% endblock %}

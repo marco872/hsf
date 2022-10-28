@@ -33,7 +33,10 @@
     <a href="{{ url_for('logout')}}" class="btn btn-secondary btn-sm">Logout</a>
     <a href="{{ url_for('update', id=current_user.id)}}" class="btn btn-secondary btn-sm">Update Profile</a>
 	<a href="{{ url_for('delete', id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
+	
 
+
+</div>
 	
 	</div>
 	<!--<div class="col-4">
@@ -96,11 +99,21 @@
 		
 	</form>-->
 	
-	
-
-
-
 </div>
-<br/><br/>	
+<br/>
+<div class="container">
+	<div class="row" align="center">
 
+	<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+            	<a class="nav-link" href="{{ url_for('add_post')}}"><span class="badge rounded-pill bg-primary">Add-Post</span></a>
+          	</li>
+       
+        	<li class="nav-item">
+            	<a class="nav-link" href="{{ url_for('posts')}}"><span class="badge rounded-pill bg-secondary">My Posts</span></a>
+          	</li>
+
+	</ul>
+	</div>
+</div>
 {% endblock %}

@@ -5,20 +5,49 @@
 {% block content %}
 
 	<br/>
-	<center>
+
 	<h1>G</h1>
 	<br/><hr/>
+<h3> Inspirations: </h3>
+<hr/>
+<div class="container">
+	<div class="row" style="margin-left: 20px">
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/gard.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Extreme Gardens</p>
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/roof.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Roof Gardens</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/vert.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Vertical Gardens</p>
+			
+		</div>
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/tun.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p style="color:grey">Green Tunnels</p>
+			
+		</div>
+	</div>
+</div>
+
+	<br/><hr/>
+
 <div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
+
 	<h3>1-Guerrilla Gardening</h3>
 	<h2>Direct action for land riform</h2>
-	<p>no articles yet...</p>
+	<p>It made me reflect on the fact that the lack of cultivation of vegetable gardens in the city distances people from their ancient passion...</p>
+	<p><em><small>full article under posts</small></em>
+	<a href="http://marco873.pythonanywhere.com/posts/23"
+              					>click here to <strong>Urban Gardens</strong></a></p></p>
 </div>
-</div>
-</div>
+
 	
 	
-	</center>
+	
 
 {% endblock %}

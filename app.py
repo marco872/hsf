@@ -126,6 +126,11 @@ def search():
 		posts = posts.order_by(Posts.title).all()
 		return render_template("search.html", form=form, searched = post.searched, posts=posts)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/library')
+def library():
+	posts = Posts.query.order_by(Posts.title)
+	return render_template("library.html", posts=posts)
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.route('/dashboard', methods=['GET', 'POST'])
 @ login_required
 def dashboard():
@@ -210,6 +215,37 @@ def about():
 	return render_template("about.html")
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship1')
+def sponsorship1():
+	return render_template("sponsorship1.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship2')
+def sponsorship2():
+	return render_template("sponsorship2.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship3')
+def sponsorship3():
+	return render_template("sponsorship3.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship4')
+def sponsorship4():
+	return render_template("sponsorship4.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship5')
+def sponsorship5():
+	return render_template("sponsorship5.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@app.route('/sponsorship6')
+def sponsorship6():
+	return render_template("sponsorship6.html")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 @app.route('/impressum')
 def impressum():
 	return render_template("impressum.html")
@@ -423,6 +459,8 @@ def post(id):
 	post = Posts.query.get_or_404(id)
 	return render_template('post.html', post=post)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 @app.route('/posts/edit/<int:id>', methods=['GET', 'POST'])
 @ login_required
 def edit_post(id):
