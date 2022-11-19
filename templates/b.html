@@ -5,9 +5,9 @@
 {% block content %}
 <h1>B</h1>
 	<br/><hr/>
-<h3> Inspirations: </h3>
+<h3 style="color:grey"> Themes: </h3>
 <hr/>
-<div class="container">
+<div class="container" style="background-color: black">
 	<div class="row" style="margin-left: 20px">
 		<div class="col" align="center">
 			<img src="{{ url_for('static', filename='images/things.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
@@ -32,7 +32,8 @@
 </div>
 
 	<br/><hr/>
-	
+
+<!-- *********************************************************************-->	
 	
 <div class="shadow p-3 mb-5 sm-light rounded ">
 	
@@ -43,8 +44,15 @@
 	<a href="http://marco873.pythonanywhere.com/posts/17"
               					>click here to <strong>Modern bartering:</strong></a></p>
 </div>
+<br>
+<a href="{{ url_for('library')}}" class="btn btn-outline-secondary btn-sm ">Full Library</a>
 
-	
+<br><br/>
+<a href="{{ url_for('index')}}" class="btn btn-outline-secondary btn-sm ">Back to Blog</a>
+
+<br><br> 
+
+<!-- *********************************************************************-->		
 
 
 {% endblock %}

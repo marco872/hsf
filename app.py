@@ -570,7 +570,7 @@ class VieweForm(FlaskForm):
 	submit = SubmitField("Submit")
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class PostForm(FlaskForm):
-	title = StringField("Select-Topic: Bartering / Cedric Price / Fifteen-minute city / Gentrification  /  Guerrilla Gardening / Recycled People", validators=[DataRequired()])
+	title = StringField("Select-Topic:", validators=[DataRequired()])
 	#content = StringField("Content", validators=[DataRequired()], widget=TextArea())
 	content = CKEditorField('Content', validators=[DataRequired()])
 	#author = StringField("Author")

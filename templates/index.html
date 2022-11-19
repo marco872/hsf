@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container-xl"></div>
+<div class="container">
 
 	<h4 style="color: darkgrey"> Welcome to :</h4>
 			<img src="{{ url_for('static', filename='images/marco.jpg') }}" width="150" align="center">
@@ -10,137 +10,218 @@
 	<h4 style="color: darkgrey"> Open Source Blog to discuss the future of our cities.</h4>
 	<br/>
 	
-	<a href="{{ url_for('add_viewer', id=current_user.id)}}">Register to Add Posts to our TOPICS</a>
-	<br/><br/>
-	<hr/><br/>
-	
-<div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/bart.jpg') }}" width="150" height="170"  align="left">
+	<a href="{{ url_for('add_viewer', id=current_user.id)}}">Register to Add Posts to our Library</a>
+</div>	
+	<hr/>
+
+
+<!--    -->
+
+<div class="container">
+	<br>
+<p style="color:darkblue" "font-size: xx-large"><strong>Topic's Library</strong></p>
+<br>
+
+
+	<div class="row" style="margin-left: 20px">
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/bart.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Bartering</strong></p>
+			<a href="{{ url_for('b')}}"><strong style="color:lightblue"> 1 post </strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship1')}}"><strong style="color:lightblue"> sponsorship</strong></a>
+
+		<br><br><br>
 		</div>
-		<div class="col-md-10" >
-			<div class="card-body"  >
-				<h3 class="card-title" style="margin-top:20px" >Bartering :</h3>
+	
+	
+		
+	
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/15.png') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Fifteen-minute city</strong></p>
+			<a href="{{ url_for('f')}}"><strong style="color:lightblue"> 1 post</strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship3')}}"><strong style="color:lightblue"> sponsorship </strong></a>
+			<br><br><br>
+		</div>
+	
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/gentry.png') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Gentrification</strong></p>
+			<a href="{{ url_for('g')}}"><strong style="color:lightblue"> 1 post </strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship4')}}"><strong style="color:lightblue"> sponsorship </strong></a>
+			<br><br><br>
+		</div>
+	
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/garden.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Guerilla Gardening</strong></p>
+			<a href="{{ url_for('g1')}}"><strong style="color:lightblue"> 1 post </strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship5')}}"><strong style="color:lightblue"> sponsorship </strong></a>
+			<br><br><br>
+		</div>
+
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/cedric.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Influencer</strong></p>
+			<a href="{{ url_for('i')}}"><strong style="color:lightblue"> 1 post </strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship2')}}"><strong style="color:lightblue"> sponsorship</strong></a>
+			<br><br><br>
+		</div>
+	
+		<div class="col" align="center">
+			<img src="{{ url_for('static', filename='images/recy.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
+			<p><strong>Recycled People</strong></p>
+			
+			<a href="{{ url_for('r')}}"><strong style="color:lightblue"> 1 post </strong></a>
+			<br/>
+			<a href="{{ url_for('sponsorship6')}}"><strong style="color:lightblue"> sponsorship </strong></a>
+			<br><br><br>
+		</div>
+
+</div>
+
+</div>
+
+	<br/><hr/>
+<div class="container">
+<p style="color:darkblue" "font-size: xx-large"><strong>Full Library</strong> </p>
+<a href="{{ url_for('library')}}"style="color:lightblue">
+              					>click here to <strong>Full Library</strong> website</a>
+</div>
+<br><br><br>
+
+<!--   
+<div class="container"></div>
+
+	<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/recy.jpg') }}" width="150" height="170"  align="left">
+			</div>
+			<div class="col-md-10" >
+				<div class="card-body"  >
+					<h3 class="card-title" style="margin-top:20px" >Recycled People</h3>
 					 <a href="{{ url_for('b')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
-				
 				<p class="card-text" >
 					 <strong>"Hospitality new frontier."</strong> 
-				</p>
+				</p
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship1')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>	
+	<a href="{{ url_for('sponsorship1')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>	
 
-<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="shadow p-3 mb-5 sm-light rounded ">
 	
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/cedric.jpg') }}" width="150"  align="left">
-		</div>
-		<div class="col-md-10">
-			<div class="card-body" >
-				<h3 class="card-title" style="margin-top:20px">Cedric Price :</h3>
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/cedric.jpg') }}" width="150"  align="left">
+			</div>
+			<div class="col-md-10">
+				<div class="card-body" >
+					<h3 class="card-title" style="margin-top:20px">Cedric Price</h3>
 					<a href="{{ url_for('c')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
-				
 				<p class="card-text" >
-					 <strong>"The wise game of Architecture" </strong> is a discipline that challenges the orthodoxy of our cities-planning in order to promote  social justice and education .</p>
+					 <strong>"The wise game of Architecture" </strong> is a discipline that challenges the orthodoxy of our cities-planning in order to promote  social justice and education .</p>-
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship2')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>	
+	<a href="{{ url_for('sponsorship2')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>	
 
-<div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/15.png') }}" width="150"  align="left">
-		</div>
-		<div class="col-md-10" >
-			<div class="card-body"  >
-				<h3 class="card-title" style="margin-top:20px">Fifteen-minute city :</h3>
-					 <a href="{{ url_for('f')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
+	<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/15.png') }}" width="150"  align="left">
+			</div>
+			<div class="col-md-10" >
+				<div class="card-body"  >
+					<h3 class="card-title" style="margin-top:20px">Fifteen-minute city</h3>
+					 	<a href="{{ url_for('f')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
 				
 				<p class="card-text" >
 					 <strong>"Return to a local way of life."</strong> 
 				</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship3')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>
+	<a href="{{ url_for('sponsorship3')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>
 
-<div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/gentry.png') }}" width="150"  height="170" align="left">
-		</div>
-		<div class="col-md-10" >
-			<div class="card-body"  >
-				<h3 class="card-title" style="margin-top:20px">Gentrification :</h3>
+	<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/gentry.png') }}" width="150"  height="170" align="left">
+			</div>
+			<div class="col-md-10" >
+				<div class="card-body"  >
+					<h3 class="card-title" style="margin-top:20px">Gentrification</h3>
 					 <a href="{{ url_for('g')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
-				
 				<p class="card-text" >
 					 <strong>"Tools and Strategies to eradicate it"</strong> and combat rising cost of living
 				</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship4')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>	
+	<a href="{{ url_for('sponsorship4')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>	
 
 
-<div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/garden.jpg') }}" width="150" height="170"  align="left">
-		</div>
-		<div class="col-md-10" >
-			<div class="card-body"  >
-				<h3 class="card-title" style="margin-top:20px" >Guerrilla Gardening :</h3>
+	<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/garden.jpg') }}" width="150" height="170"  align="left">
+			</div>
+				<div class="col-md-10" >
+					<div class="card-body"  >
+					<h3 class="card-title" style="margin-top:20px" >Guerrilla Gardening</h3>
 					 <a href="{{ url_for('g1')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a></a></a>
 				
 				<p class="card-text" >
 					 <strong>"Direct action for land riform."</strong> 
 				</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship5')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>	
+	<a href="{{ url_for('sponsorship5')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>	
 
-<div class="shadow p-3 mb-5 sm-light rounded ">
-<div class="card mb-3" style="margin-top:5px">
-	<div class="row no-gutters">
-		<div class="col-md-2">
-			<img src="{{ url_for('static', filename='images/recy.jpg') }}" width="150"   align="left">
-		</div>
-		<div class="col-md-10" >
-			<div class="card-body"  >
-				<h3 class="card-title" style="margin-top:20px" >Recycled People :</h3>
+	<div class="shadow p-3 mb-5 sm-light rounded ">
+	<div class="card mb-3" style="margin-top:5px">
+		<div class="row no-gutters">
+			<div class="col-md-2">
+				<img src="{{ url_for('static', filename='images/recy.jpg') }}" width="150"   align="left">
+			</div>
+			<div class="col-md-10" >
+				<div class="card-body"  >
+					<h3 class="card-title" style="margin-top:20px" >Recycled People</h3>
 					 <a href="{{ url_for('r')}}"><strong><em style="color:lightblue"> 1 post </em></strong></a>
 				
 				<p class="card-text" >
 					 <strong>"We all are recycled..."</strong> 
 				</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<a href="{{ url_for('sponsorship6')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
-</div>	
-
+	<a href="{{ url_for('sponsorship6')}}"><strong><em style="color:lightblue"> sponsorship </em></strong></a>
+	</div>	
+</div>-->
 
 {% endblock %}
 

@@ -7,10 +7,9 @@
 	<br/>
 	
 	<h1>F</h1>
-	<br/><hr/>
-<h3> Inspirations: </h3>
+<h3 style="color:grey"> Themes: </h3>
 <hr/>
-<div class="container">
+<div class="container" style="background-color: black">
 	<div class="row" style="margin-left: 20px">
 		<div class="col" align="center">
 			<img src="{{ url_for('static', filename='images/help.jpg') }}" class="rounded-circle" width="160" height="160" border="5">
@@ -45,7 +44,11 @@
 	<a href="http://marco873.pythonanywhere.com/posts/19"
               					>click here to <strong>Flex Building Model Concept</strong></a></p>
 </div>
+<br>
+<a href="{{ url_for('library')}}" class="btn btn-outline-secondary btn-sm ">Full Library</a>
+<br><br/>
+<a href="{{ url_for('index')}}" class="btn btn-outline-secondary btn-sm ">Back to Blog</a>
 
-
+<br><br> 
 
 {% endblock %}

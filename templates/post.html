@@ -20,14 +20,17 @@
 {{ post.date_posted}}</small> 
 <br><br>
 {{ post.content|safe }}<br>
-<a href="{{ url_for('products')}}" class="btn btn-outline-success btn "><strong>Innovations</strong></a>
+<a href="{{ url_for('products')}}" class="btn btn-outline-success btn "><strong>Links</strong></a>
 <br/>
 
 </div>
 
+<br>
+<a href="{{ url_for('library')}}" class="btn btn-outline-secondary btn-sm ">Full Library</a>
 <!--<em>{{ post.poster.about_author }}</em>-->
-<br><br> 
+<br><br/>
 <a href="{{ url_for('index')}}" class="btn btn-outline-secondary btn-sm ">Back to Blog</a>
+
 <br><br> 	
 {% endblock %}
 
